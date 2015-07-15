@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane minHeight="40.0" minWidth="210.0" style="-fx-background-color: #eee; -fx-border-color: #f4f4f4; -fx-border-width: 2px;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mouliTradeV2.server.ItemController">
+   <children>
+      <Label fx:id="lbl_userName" layoutX="5.0" layoutY="5.0" text="\$USER_NAME$" />
+      <Label fx:id="lbl_current" layoutX="5.0" layoutY="22.0" text="15245 €" textFill="#6da800">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl_total" layoutX="145.0" layoutY="22.0" text="35000 €" textFill="#31b916">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane minHeight="576.0" minWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mouliTradeV2.server.MainController">
+   <children>
+      <GridPane layoutX="62.0" layoutY="179.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="300.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="276.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <LineChart fx:id="lc_action" layoutX="6.0" layoutY="-28.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                          <xAxis>
+                            <NumberAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <Label layoutX="14.0" layoutY="14.0" style="-fx-font-weight: 700;" text="Cours action :" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <children>
+                        <BarChart fx:id="bc_top5" layoutX="-131.0" layoutY="-22.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </BarChart>
+                        <Label layoutX="14.0" layoutY="14.0" style="-fx-font-weight: 700;" text="Top 5 :" />
+                        <Button layoutX="456.0" layoutY="5.0" mnemonicParsing="false" onAction="#openMore" text="More" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </GridPane>
+            <GridPane GridPane.rowIndex="1">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="860.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="164.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="276.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <ScrollPane hbarPolicy="NEVER" prefHeight="276.0" prefWidth="860.0" vbarPolicy="ALWAYS">
+                     <content>
+                        <HBox prefHeight="276.0" prefWidth="860.0">
+                           <children>
+                              <VBox fx:id="vb_user0" prefHeight="200.0" prefWidth="210.0" />
+                              <VBox fx:id="vb_user1" prefHeight="200.0" prefWidth="210.0" />
+                              <VBox fx:id="vb_user2" prefHeight="200.0" prefWidth="210.0" />
+                              <VBox fx:id="vb_user3" prefHeight="200.0" prefWidth="210.0" />
+                           </children>
+                        </HBox>
+                     </content>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </ScrollPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: e9e9e9; -fx-border-color: f4f4f4; -fx-border-width: 2;" GridPane.columnIndex="1">
+                     <children>
+                        <Label fx:id="lbl_actionFile" layoutX="5.0" layoutY="5.0" prefWidth="154.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                        <Button fx:id="btn_chooseActionFile" layoutX="5.0" layoutY="27.0" mnemonicParsing="false" onAction="#chooseActionFile" prefWidth="154.0" text="Choose Action File" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                        <TextField fx:id="tf_traderNumber" layoutX="5.0" layoutY="58.0" prefWidth="154.0" promptText="Traders Number" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                        <TextField fx:id="tf_port" layoutX="5.0" layoutY="89.0" prefWidth="154.0" promptText="Port Connection" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                        <TextField fx:id="tf_capital" layoutX="5.0" layoutY="120.0" prefWidth="154.0" promptText="Capital" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                        <Button fx:id="btn_openConnection" layoutX="5.0" layoutY="151.0" mnemonicParsing="false" onAction="#openConnection" prefWidth="154.0" text="Open Connection" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                        <TextField fx:id="tf_numberToSend" disable="true" layoutX="5.0" layoutY="206.0" prefWidth="100.0" promptText="Number" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="57.0" />
+                        <Button fx:id="btn_send" disable="true" layoutX="110.0" layoutY="206.0" mnemonicParsing="false" onAction="#sendData" text="Send" AnchorPane.rightAnchor="5.0" />
+                        <Slider fx:id="sl_speed" disable="true" layoutX="5.0" layoutY="250.0" max="3000.0" min="100.0" prefWidth="154.0" value="1000.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                        <Label fx:id="lbl_speed" alignment="CENTER" disable="true" layoutX="70.0" layoutY="261.0" text="Delay" textAlignment="CENTER" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+                           <font>
+                              <Font size="8.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbl_nbConnected" layoutX="5.0" layoutY="182.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbl_lineRemaining" layoutX="5.0" layoutY="237.0" textFill="#4a4a4a" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Label>
+                        <Separator layoutX="7.0" layoutY="197.0" prefWidth="200.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </GridPane>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
